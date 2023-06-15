@@ -1,0 +1,195 @@
+@import "mixin";
+body {
+    margin: 0;
+}
+.d-none {
+    display: none;
+}
+.d-block {
+    display: block;
+}
+.wrapper {
+    margin: 0 10%;
+    font-family: sans-serif;
+    position: relative;
+    }
+.heading {
+    text-align: center;
+    display: flex;
+    h2 {
+        text-transform: uppercase;
+    }
+    .heading-container {
+        flex-grow: 1;
+    }
+    .minicart-btn {
+        position: relative;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        .number {
+            color: white;
+            background: red;
+            position: absolute;
+            left: 18px;
+            top: 35px;
+        }
+    }
+}
+.products {
+    @include justify-center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    .box {
+        border: 1px solid grey;
+        max-width: calc(25% - 40px);
+        flex-basis: 25%;
+        margin: 10px;
+        padding: 20px 0;
+        h4 {
+            text-indent: 10px;
+            color: grey;
+        }
+    }
+    .price {
+        @include align-center;
+        @include justify-space;
+        align-items: unset;
+        background-color: rgb(212 203 203 / 51%);
+        .triangle {
+            height: 24px;
+        }
+        .cart{
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        p {
+            @include text-indent;
+            align-items: center;
+            @include justify-space;
+            margin: 0;
+            color: white;
+            background-color: rgb(16,31,34);
+            .strike {
+                text-decoration: line-through;
+                @include text-indent;
+                margin-bottom: 0;
+                font-size: small;
+            }
+        }
+        .basket-icon {
+            width: 20px;
+            height: 20px;
+        }
+    }
+    .image {
+        margin-left: 35px;
+        width: 150px;
+        height: 150px;
+    }
+    .first-prod,
+    .third-prod {
+        position: relative;
+        .new-badge-black {
+            @include new-badge(black);
+        }
+    }
+    .sixth-prod {
+        position: relative;
+        .new-badge-blue {
+            @include new-badge(aquamarine);
+        }
+    }
+}
+.page-no {
+    @include align-center;
+    text-align: center;
+    margin-top: 20px;
+    a {
+        margin-right: 15px;
+        border-radius: 50%;
+        @include align-center;
+        text-decoration: none;
+        height: 30px;
+        width: 30px;
+        background-color: white;
+        color: black;
+        border: 1px solid rgb(189, 186, 186);
+    }
+    a.active {
+        background-color: aquamarine;
+        color: white;
+    }
+}
+.minicart-section {
+    background-color: #f4f4f4;
+    width: 25%;
+    border: 1px solid grey;
+    position: absolute;
+    top: 65px;
+    right: 14px;
+    height: 472px;
+    overflow: auto;
+    .items-info {
+        text-align: center;
+        padding: 12px 0;
+        color: grey;
+    }
+    .item-details {
+        border-bottom: 1px solid grey;
+        border-top: 1px solid grey;
+        padding-bottom: 20px;
+        .selected-product-details-div {
+            display: flex;
+            padding: 5px;
+        }
+        .product-image-div {
+            width: 40%;
+            img {
+                width: 100%;
+            }
+           
+        }
+        .product-description-div {
+            padding-left: 11px;
+            font-size: 13px;
+            .top-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .product-price-p {
+                font-weight: bold;
+            }
+            .product-specs {
+                p {
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+        }
+        .price-total {
+            border-top: 1px solid grey;
+            padding: 15px 17px 0 0;
+            text-align: end;
+            font-weight: bold;
+        }
+        .proceed-btn {
+            padding: 12px 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            vertical-align: middle;
+            background-color: orange;
+            color: white;
+            border: none;
+            margin: 5px;
+        }
+    }
+    .dilevery-info {
+        color: grey;
+        text-align: center;
+        padding: 30px 0;
+        font-size: 12px;
+    }
+}
